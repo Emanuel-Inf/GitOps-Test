@@ -1,5 +1,4 @@
 apiVersion: v2
-name: traefik-infrastruktur
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
