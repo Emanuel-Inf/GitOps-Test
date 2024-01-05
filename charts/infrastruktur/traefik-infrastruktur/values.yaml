@@ -1,5 +1,0 @@
-traefik-infrastruktur-extension:
-  enabled: true
-
-nginx: 
-  enabled: true
