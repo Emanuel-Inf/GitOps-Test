@@ -18,5 +18,8 @@
         - name: Change directory
           run: cd charts/test
 
+        - name: echo
+          run: ls
+
         - name: Install dependencies
           run: go mod download
