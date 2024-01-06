@@ -28,7 +28,3 @@ dependencies:
     version: 0.1.0
     condition: traefik-infrastruktur-extension.enabled
     repository: file://../traefik-infrastruktur-extension
-  - name: nginx
-    version: 0.1.0
-    condition: nginx.enabled
-    repository: file://../nginx
