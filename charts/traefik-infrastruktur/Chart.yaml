@@ -26,7 +26,6 @@ appVersion: "1.16.0"
 dependencies:
   - name: traefik-infrastruktur-extension
     version: 0.1.1
-    condition: traefik-infrastruktur-extension.enabled
     repository: file://../traefik-infrastruktur-extension
 
 maintainers:
