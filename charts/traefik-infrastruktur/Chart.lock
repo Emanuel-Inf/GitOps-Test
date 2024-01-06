@@ -1,0 +1,6 @@
+dependencies:
+- name: traefik-infrastruktur-extension
+  repository: file://../traefik-infrastruktur-extension
+  version: 0.1.1
+digest: sha256:4b5a0e89a72c6aa158ca65809a64862f423b36a36e78dc39673df58ea8cbeaf5
+generated: "2024-01-06T01:29:27.5245649+01:00"
