@@ -19,3 +19,8 @@
           run: |
             cd charts/test
             go mod download
+
+        - name: run tests
+          run: |
+            cd charts/test
+            go test
