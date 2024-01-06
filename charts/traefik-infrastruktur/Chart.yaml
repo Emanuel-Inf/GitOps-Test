@@ -23,10 +23,5 @@ version: 0.1.1
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
 
-dependencies:
-  - name: traefik-infrastruktur-extension
-    version: 0.1.1
-    repository: file://../traefik-infrastruktur-extension
-
 maintainers:
   - name: Emanuel
