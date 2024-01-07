@@ -11,6 +11,10 @@
         - name: Checkout
           uses: actions/checkout@v4
 
+        - name: lint charts
+          run: |
+            cd charts/traefik-infrastruktur
+            helm lint .
     #    - name: setup-go
     #      uses: actions/setup-go@v4
     #      with:
