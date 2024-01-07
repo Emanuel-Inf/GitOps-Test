@@ -1,2 +1,5 @@
 traefik-infrastruktur-extension:
   enabled: true
+
+ServiceAccountName: traefik-account
+image: traefik:v2.10
