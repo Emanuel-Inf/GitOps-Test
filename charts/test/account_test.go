@@ -16,11 +16,11 @@ func TestPodTemplateRendersContainerImage(t *testing.T) {
 	// Setup the args. For this test, we will set the following input values:
 	// - image=nginx:1.15.8
 	options := &helm.Options{
-		SetValues: map[string]string{"ServiceAccountName": "00-account"},
+		SetValues: map[string]string{"ServiceAccountName": "account"},
 	}
 
 	// Run RenderTemplate to render the template and capture the output.
-	output := helm.RenderTemplate(t, options, helmChartPath, "serviceaccount", []string{"templates/account.yml"})
+	output := helm.RenderTemplate(t, options, helmChartPath, "serviceaccount", []string{"templates/00-account.yml"})
 
 	// Now we use kubernetes/client-go library to render the template output into the Pod struct. This will
 	// ensure the Pod resource is rendered correctly.
