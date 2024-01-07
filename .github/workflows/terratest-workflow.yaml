@@ -23,6 +23,7 @@
     #      uses: medyagh/setup-minikube@master
 
     lint:
+      needs: setup
       runs-on: ubuntu-latest
       steps:
 
