@@ -1,4 +1,4 @@
-package test
+package integration_tests
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ import (
 
 func TestPodDeploysContainerImage(t *testing.T) {
 	// Path to the helm chart we will test
-	helmChartPath := "../traefik-infrastruktur"
+	helmChartPath := "../../traefik-infrastruktur"
 
 	// Setup the kubectl config and context. Here we choose to use the defaults, which is:
 	// - HOME/.kube/config for the kubectl config file

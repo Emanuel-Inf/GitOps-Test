@@ -16,20 +16,16 @@
           with:
             go-version: 1.21.4
 
-        - name: setup-minikube
-          id: minikube
-          uses: medyagh/setup-minikube@master
-          
         - name: Install test dependencies
           run: |
             cd charts/test
             go mod download
-        - name: lint charts
-          run: |
-            cd charts/traefik-infrastruktur
-            helm lint .
-            
+
+        - name: setup-minikube
+          id: minikube
+          uses: medyagh/setup-minikube@master
+
         - name: run tests
           run: |
-            cd charts/test
+            cd charts/test/integration-tests
             go test

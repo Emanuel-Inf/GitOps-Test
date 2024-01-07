@@ -1,4 +1,4 @@
-package test
+package unit_tests
 
 import (
 	"testing"
@@ -11,7 +11,7 @@ import (
 func TestPodTemplateRendersContainerImage(t *testing.T) {
 
 	// Path to the helm chart we will test
-	helmChartPath := "../traefik-infrastruktur"
+	helmChartPath := "../../traefik-infrastruktur"
 
 	// Setup the args. For this test, we will set the following input values:
 	// - image=nginx:1.15.8
