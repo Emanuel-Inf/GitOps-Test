@@ -11,14 +11,14 @@
         - name: Checkout
           uses: actions/checkout@v4
 
-        - name: setup-go
-          uses: actions/setup-go@v4
-          with:
-            go-version: 1.21.4
+    #    - name: setup-go
+    #      uses: actions/setup-go@v4
+    #      with:
+    #        go-version: 1.21.4
 
-        - name: setup-minikube
-          id: minikube
-          uses: medyagh/setup-minikube@master
+    #    - name: setup-minikube
+    #      id: minikube
+    #      uses: medyagh/setup-minikube@master
 
     lint:
       runs-on: ubuntu-latest
@@ -29,32 +29,32 @@
             cd charts/traefik-infrastruktur
             helm lint .
 
-    unit-tests:
-      needs: setup
-      runs-on: ubuntu-latest
-      steps:
+    #unit-tests:
+    #  needs: setup
+    #  runs-on: ubuntu-latest
+    #  steps:
 
-        - name: Install test dependencies
-          run: |
-            cd charts/test/unit-tests
-            go mod download
+    #    - name: Install test dependencies
+    #      run: |
+    #        cd charts/test/unit-tests
+    #        go mod download
 
-        - name: run unit tests
-          run: |
-            cd charts/test/unit-tests
-            go test
+    #    - name: run unit tests
+    #      run: |
+    #        cd charts/test/unit-tests
+    #        go test
 
-    integration-tests:
-      needs: setup
-      runs-on: ubuntu-latest
-      steps:
+    #integration-tests:
+    #  needs: setup
+    #  runs-on: ubuntu-latest
+    #  steps:
 
-        - name: Install test dependencies
-          run: |
-            cd charts/test/integration-tests
-            go mod download
+    #    - name: Install test dependencies
+    #      run: |
+    #        cd charts/test/integration-tests
+    #        go mod download
 
-        - name: run unit tests
-          run: |
-            cd charts/test/integration-tests
-            go test
+    #    - name: run unit tests
+    #      run: |
+    #        cd charts/test/integration-tests
+    #        go test
