@@ -4,60 +4,64 @@
       branches: [ 'main' ]
 
   jobs:
-    setup:
-      runs-on: ubuntu-latest
-      steps:
-
-        - name: Checkout
-          uses: actions/checkout@v4
-          with:
-            persist-credentials: false
-
-    #    - name: setup-go
-    #      uses: actions/setup-go@v4
-    #      with:
-    #        go-version: 1.21.4
-
-    #    - name: setup-minikube
-    #      id: minikube
-    #      uses: medyagh/setup-minikube@master
 
     lint:
-      needs: setup
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout
+          uses: actions/checkout@v4
 
         - name: lint charts
           run: |
             cd charts/traefik-infrastruktur
             helm lint .
 
-    #unit-tests:
-    #  needs: setup
-    #  runs-on: ubuntu-latest
-    #  steps:
+    unit-tests:
+      needs: lint
+      runs-on: ubuntu-latest
+      steps:
 
-    #    - name: Install test dependencies
-    #      run: |
-    #        cd charts/test/unit-tests
-    #        go mod download
+        - name: Checkout
+          uses: actions/checkout@v4
 
-    #    - name: run unit tests
-    #      run: |
-    #        cd charts/test/unit-tests
-    #        go test
+        - name: setup-go
+          uses: actions/setup-go@v4
+          with:
+            go-version: 1.21.4
 
-    #integration-tests:
-    #  needs: setup
-    #  runs-on: ubuntu-latest
-    #  steps:
+        - name: Install test dependencies
+          run: |
+            cd charts/test/unit-tests
+            go mod download
 
-    #    - name: Install test dependencies
-    #      run: |
-    #        cd charts/test/integration-tests
-    #        go mod download
+        - name: run unit tests
+          run: |
+            cd charts/test/unit-tests
+            go test
 
-    #    - name: run unit tests
-    #      run: |
-    #        cd charts/test/integration-tests
-    #        go test
+    integration-tests:
+      needs: lint
+      runs-on: ubuntu-latest
+      steps:
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: setup-go
+          uses: actions/setup-go@v4
+          with:
+            go-version: 1.21.4
+
+        - name: setup-minikube
+          id: minikube
+          uses: medyagh/setup-minikube@master
+
+        - name: Install test dependencies
+          run: |
+            cd charts/test/integration-tests
+            go mod download
+
+        - name: run unit tests
+          run: |
+            cd charts/test/integration-tests
+            go test
