@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Emanuel-Inf/GitOps-Test.git
     targetRevision: HEAD
-    path: nginx1
+    path: nginx-2
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx-test1
