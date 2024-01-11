@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynginx-test2
+  labels:
+    run: nginx-test2
+  namespace: nginx-test2
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: nginx-test2
