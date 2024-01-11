@@ -8,6 +8,6 @@ spec:
   source:
     repoURL: https://github.com/Emanuel-Inf/GitOps-Test.git
     targetRevision: HEAD
-    path: app-of-apps
+    path: argo-configs
   destination:
     server: https://kubernetes.default.svc
